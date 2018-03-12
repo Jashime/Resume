@@ -7,16 +7,40 @@
     <title>My Resume</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
-        div{
-            border:1px solid red;
+        #nav-top{
+            background: #148cca;
+        }
+        #nav-top a{
+            color: #fff;
+            font-weight: bold;
+        }
+        #myphoto{
+            border-radius:50%;
+            height:50px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">导航栏</div>
-        </div>
+    <!-- 导航栏 -->
+    <div>
+        <nav class="navbar navbar-default navbar-fixed-top" id="nav-top">
+            <div class="container" >
+                <div class="navbar-header">
+                    <a href="#"><img id="myphoto" src="img/Hehaifeng.jpg" alt="我的照片"></a>
+                    <span style="color:#fff;font-weight:bold;margin-left:10px">何海锋</span>
+                </div>
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="">基本信息</a></li>
+                        <li><a href="">工作经历</a></li>
+                        <li><a href="">专业技能</a></li>
+                        <li><a href="">项目经验</a></li>
+                        <li><a href="">自我评价</a></li>
+                        <li><a href="">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
     <script src="js/jquery-3.2.1.min.js"></script>    
     <script src="js/bootstrap.min.js"></script>
