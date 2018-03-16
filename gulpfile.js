@@ -3,7 +3,7 @@ var webpack = require('gulp-webpack');
 var gulpPlumber = require('gulp-plumber');
 var gulpWatch = require('gulp-watch');
 var sass = require('gulp-sass');
-var connect = require('gulp-connect');
+// var connect = require('gulp-connect');
 var browserSync = require('browser-sync').create();
 
 var webpackConfig = {
@@ -27,6 +27,7 @@ gulp.task('style', function(){
       .pipe(sass())
       .pipe(gulp.dest('./www/dest/'))
       .pipe(browserSync.stream());
+      // .pipe(connect.reload());
 })
 
 gulp.task('script', function(){
@@ -34,20 +35,22 @@ gulp.task('script', function(){
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest('./www/dest/'))
     .pipe(browserSync.stream());
+    // .pipe(connect.reload());
+    
 })
 
-gulp.task('connect',function(){
-    connect.server({
-        // host:'localhost',
-        // port:3000,
-        // root:'./',
-        livereload:true
-    })
-})
+// gulp.task('connect',function(){
+//     connect.server({
+//         root:'./www',
+//         livereload:true
+//     })
+// })
 
 gulp.task('html',function(){
     gulp.src('./www/index.html')
-        .pipe(connect.reload());
+    // .pipe(connect.reload());
+    .pipe(browserSync.stream());
+        
 })
 
 gulp.task('watch',function(){
@@ -56,11 +59,12 @@ gulp.task('watch',function(){
     gulp.watch('./www/index.html', ['html']);
 })
 
-gulp.task('default', ['script','style','html','connect','watch'], function(){
+gulp.task('browser', function(){
     browserSync.init({
       server:{
-        baseDir:'./www/'
+        baseDir:'./www'
       },
       open: true
     })
 })
+gulp.task('default',['browser','watch']);
