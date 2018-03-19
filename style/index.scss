@@ -63,7 +63,7 @@ body{
         transform: translate(-50%,-50%) scale(0.7);
     }
     @media all and (max-width:375px) {
-        transform: translate(-50%,-50%) scale(0.5);
+        transform: translate(-50%,-50%) scale(0.4);
     }
 }
 .common{
@@ -228,3 +228,27 @@ body{
 }
 
 //专业技能
+#skills-page{
+    display: none;
+}
+.skills-name{
+    overflow: hidden;
+    padding: 30px 100px;
+}
+#skills-page .skills-name li{
+    list-style: none;
+    float: left;
+    width: 33.33%;
+    height: 33.33%;
+    
+}
+#skills-page .skills-name li p{
+    font-size: 26px;
+    padding-top:10px; 
+}
+
+//项目经验
+
+.project-content{
+    
+}
