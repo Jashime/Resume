@@ -80,13 +80,13 @@ body {
 .Info-content {
   width: 600px;
   line-height: 30px;
-  margin: 120px auto; }
+  margin: 70px auto; }
 
 .Info-content tr td {
   padding: 20px 0; }
 
 #experience-page {
-  display: none; }
+  display: block; }
 
 .timeline:before {
   position: absolute;
@@ -124,16 +124,16 @@ body {
     top: 100px;
     left: 250px; } }
 
-.experience-first {
+.experience-1 {
   position: absolute; }
   @media all and (min-width: 1024px) {
-    .experience-first {
+    .experience-1 {
       padding-right: 50px;
       top: 80px;
       right: 50%;
       text-align: right; } }
   @media all and (max-width: 1024px) {
-    .experience-first {
+    .experience-1 {
       top: 80px;
       left: 300px;
       text-align: left; } }
@@ -148,16 +148,16 @@ body {
     top: 250px;
     left: 250px; } }
 
-.experience-second {
+.experience-2 {
   position: absolute;
   text-align: left; }
   @media all and (min-width: 1024px) {
-    .experience-second {
+    .experience-2 {
       top: 230px;
       left: 50%;
       padding-left: 50px; } }
   @media all and (max-width: 1024px) {
-    .experience-second {
+    .experience-2 {
       top: 230px;
       left: 300px; } }
 
@@ -171,16 +171,16 @@ body {
     top: 400px;
     left: 250px; } }
 
-.experience-third {
+.experience-3 {
   position: absolute; }
   @media all and (min-width: 1024px) {
-    .experience-third {
+    .experience-3 {
       top: 380px;
       right: 50%;
       padding-right: 50px;
       text-align: right; } }
   @media all and (max-width: 1024px) {
-    .experience-third {
+    .experience-3 {
       top: 380px;
       left: 300px;
       text-align: left; } }
@@ -195,18 +195,35 @@ body {
     top: 550px;
     left: 250px; } }
 
-.experience-fourth {
+.experience-4 {
   position: absolute;
   text-align: left; }
   @media all and (min-width: 1024px) {
-    .experience-fourth {
+    .experience-4 {
       top: 530px;
       left: 50%;
       padding-left: 50px; } }
   @media all and (max-width: 1024px) {
-    .experience-fourth {
+    .experience-4 {
       top: 530px;
       left: 300px; } }
+
+#skills-page {
+  display: none; }
+
+.skills-name {
+  overflow: hidden;
+  padding: 30px 100px; }
+
+#skills-page .skills-name li {
+  list-style: none;
+  float: left;
+  width: 33.33%;
+  height: 33.33%; }
+
+#skills-page .skills-name li p {
+  font-size: 26px;
+  padding-top: 10px; }
 
 #skills-page {
   display: none; }
