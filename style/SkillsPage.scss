@@ -4,16 +4,19 @@
 }
 .skills-name{
     overflow: hidden;
-    padding: 30px 100px;
+    padding: 50px 150px;
 }
 #skills-page .skills-name li{
     list-style: none;
     float: left;
     width: 33.33%;
     height: 33.33%;
-    
+    // padding: 20px;
 }
 #skills-page .skills-name li p{
     font-size: 26px;
-    padding-top:10px; 
+    padding-top:20px; 
+}
+#skills-page .skills-name li img{
+    width: 40%;
 }

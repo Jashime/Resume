@@ -6,7 +6,7 @@ var SkillsItem = React.createClass({
     getInitialState:function(){
         return{
             dataBase:[
-                {id:1,iconsrc:"./img/skills/HTML5.png",title:"HTML"},
+                {id:1,iconsrc:"./img/skills/html5.png",title:"HTML"},
                 {id:2,iconsrc:"./img/skills/css3.png",title:"CSS"},
                 {id:3,iconsrc:"./img/skills/javascript.png",title:"Javascript"},
                 {id:4,iconsrc:"./img/skills/jquery.png",title:"JQuery"},
