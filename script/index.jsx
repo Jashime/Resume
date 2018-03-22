@@ -4,6 +4,7 @@ var ReactDOM =require('react-dom');
 var WelcomePage = require('./WelcomePage.jsx');
 var InfoPage = require('./InfoPage/InfoPage.jsx');
 var ExperiencePage = require('./ExperiencePage/ExperiencePage.jsx');
+var SkillsPage = require('./SkillsPage.jsx');
 
 var Main = React.createClass({
     render:function(){
@@ -12,6 +13,7 @@ var Main = React.createClass({
                 <WelcomePage/>
                 <InfoPage/>
                 <ExperiencePage/>
+                <SkillsPage/>
             </div>
         )
     }

@@ -74,24 +74,5 @@ body{
 @import "./WelcomePage.scss";
 @import "./InfoPage.scss";
 @import "./ExperiencePage.scss";
+@import "./SkillsPage.scss";
 
-
-//专业技能
-#skills-page{
-    display: none;
-}
-.skills-name{
-    overflow: hidden;
-    padding: 30px 100px;
-}
-#skills-page .skills-name li{
-    list-style: none;
-    float: left;
-    width: 33.33%;
-    height: 33.33%;
-    
-}
-#skills-page .skills-name li p{
-    font-size: 26px;
-    padding-top:10px; 
-}

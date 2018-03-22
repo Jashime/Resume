@@ -86,7 +86,7 @@ body {
   padding: 20px 0; }
 
 #experience-page {
-  display: block; }
+  display: none; }
 
 .timeline:before {
   position: absolute;
@@ -209,24 +209,7 @@ body {
       left: 300px; } }
 
 #skills-page {
-  display: none; }
-
-.skills-name {
-  overflow: hidden;
-  padding: 30px 100px; }
-
-#skills-page .skills-name li {
-  list-style: none;
-  float: left;
-  width: 33.33%;
-  height: 33.33%; }
-
-#skills-page .skills-name li p {
-  font-size: 26px;
-  padding-top: 10px; }
-
-#skills-page {
-  display: none; }
+  display: block; }
 
 .skills-name {
   overflow: hidden;
