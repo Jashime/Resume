@@ -7,9 +7,10 @@ body{
     width: 100%;
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 #nav-top{
-    background: #148cca;
+    background: #1f749e;
     border: none;
 }
 #nav-top a{
@@ -38,7 +39,9 @@ body{
     right: 0;
     bottom: 0;
     left: 0;
-    background: gray;
+    background: url(../img/background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
 }
 .content{
@@ -46,10 +49,10 @@ body{
     width: 960px;
     height: 700px;
     left: 50%;
-    top: 50%;
+    top: 55%;
     right: auto;
     bottom: auto;
-    background: rgb(176, 189, 175);
+    background: rgba(0, 0, 0, 0.3);
     @media all and (min-width:1280px) {
         transform: translate(-50%,-50%) scale(0.9);
     }
@@ -68,7 +71,7 @@ body{
 }
 .common{
     text-align: center;
-    
+    position: relative;
 }
 
 @import "./WelcomePage.scss";

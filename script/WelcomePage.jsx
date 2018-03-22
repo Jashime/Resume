@@ -7,10 +7,11 @@ var Obj = {
     myDet:'开弓没有回头箭，选择的路就要好好的走下去',
 };
 var WelcomePage = React.createClass({
+    
     render:function(){
         return(
             
-            <div className="common" id="welcome-page">
+            <div className="common" id="welcome-page" style={{display:this.props.firstDisplay}}>
                 <img className="photo" src="./img/photo/Hehaifeng_2.jpg" alt="photo"/>
                 <h1>{Obj.myName}</h1>
                 <h2>{Obj.myGoal}</h2>

@@ -8,7 +8,7 @@ var ExperiencePage = React.createClass({
 
     render:function(){
         return(
-            <div className="common" id="experience-page">
+            <div className="common" id="experience-page" style={{display:this.props.thirdDisplay}}>
                 <h2>工作经历</h2>
                 <div className="timeline">
                     <ExperienceItem />
