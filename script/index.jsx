@@ -198,7 +198,7 @@ var NavPage = React.createClass({
             <nav className="navbar navbar-default navbar-fixed-top" id="nav-top">
                 <div className="container" >
                     <div className="navbar-header">
-                        <a href="#"><img id="myphoto" src="./www/img/photo/Hehaifeng_1.jpg" alt="我的照片"/></a>
+                        <a href="#"><img id="myphoto" src="../www/img/photo/Hehaifeng_1.jpg" alt="我的照片"/></a>
                         <span className="myName">何海锋</span>
                         <button className="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                             <span className="icon-bar"></span>

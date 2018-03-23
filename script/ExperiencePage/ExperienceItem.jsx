@@ -7,7 +7,7 @@ var ExperienceIcon = React.createClass({
         var className = "experience-icon icon_" + this.props.count;
         return(
             <div className={className}>
-                <img src="../../www/img/icons/experience-icon.png" alt="图标"/>
+                <img src="./www/img/icons/experience-icon.png" alt="图标"/>
             </div>   
         )
     }
