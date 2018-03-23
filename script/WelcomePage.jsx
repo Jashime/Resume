@@ -11,7 +11,7 @@ var WelcomePage = React.createClass({
     render:function(){
         return(
             
-            <div className="common" id="welcome-page" style={{display:this.props.firstDisplay}}>
+            <div id="welcome-page" className={this.props.flashClass} style={{display:this.props.firstDisplay}}>
                 <img className="photo" src="../www/img/photo/Hehaifeng_2.jpg" alt="photo"/>
                 <h1>{Obj.myName}</h1>
                 <h2>{Obj.myGoal}</h2>

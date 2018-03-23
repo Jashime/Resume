@@ -8,8 +8,8 @@ var InfoPage = React.createClass({
     render:function(){
         return(
             
-            <div className="common" id="Info-page" style={{display:this.props.secondDisplay}}>
-                <h2>基本信息</h2>
+            <div className={this.props.flashClass} id="Info-page" style={{display:this.props.secondDisplay}}>
+                
                 <table className="Info-content">
                     <MyInfo/> 
                 </table>

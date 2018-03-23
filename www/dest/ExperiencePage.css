@@ -1,0 +1,198 @@
+#experience-page {
+  display: none; }
+
+.timeline:before {
+  position: absolute;
+  content: " ";
+  width: 2px;
+  height: 550px;
+  top: 100px;
+  bottom: 0;
+  background: #0e8bd3;
+  box-sizing: border-box; }
+  @media all and (min-width: 1024px) {
+    .timeline:before {
+      left: 50%; } }
+  @media all and (max-width: 1024px) {
+    .timeline:before {
+      left: 250px; } }
+
+.experience-icon {
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: mediumturquoise;
+  line-height: 40px;
+  transform: translate(-50%); }
+
+@media all and (min-width: 1024px) {
+  .icon_1 {
+    top: 100px;
+    left: 50%; } }
+
+@media all and (max-width: 1024px) {
+  .icon_1 {
+    top: 100px;
+    left: 250px; } }
+
+.experience-1 {
+  position: absolute; }
+  @media all and (min-width: 1024px) {
+    .experience-1 {
+      padding-right: 50px;
+      top: 80px;
+      right: 50%;
+      text-align: right; } }
+  @media all and (max-width: 1024px) {
+    .experience-1 {
+      top: 80px;
+      left: 300px;
+      text-align: left; } }
+
+@media all and (min-width: 1024px) {
+  .icon_2 {
+    top: 250px;
+    left: 50%; } }
+
+@media all and (max-width: 1024px) {
+  .icon_2 {
+    top: 250px;
+    left: 250px; } }
+
+.experience-2 {
+  position: absolute;
+  text-align: left; }
+  @media all and (min-width: 1024px) {
+    .experience-2 {
+      top: 230px;
+      left: 50%;
+      padding-left: 50px; } }
+  @media all and (max-width: 1024px) {
+    .experience-2 {
+      top: 230px;
+      left: 300px; } }
+
+@media all and (min-width: 1024px) {
+  .icon_3 {
+    top: 400px;
+    left: 50%; } }
+
+@media all and (max-width: 1024px) {
+  .icon_3 {
+    top: 400px;
+    left: 250px; } }
+
+.experience-3 {
+  position: absolute; }
+  @media all and (min-width: 1024px) {
+    .experience-3 {
+      top: 380px;
+      right: 50%;
+      padding-right: 50px;
+      text-align: right; } }
+  @media all and (max-width: 1024px) {
+    .experience-3 {
+      top: 380px;
+      left: 300px;
+      text-align: left; } }
+
+@media all and (min-width: 1024px) {
+  .icon_4 {
+    top: 550px;
+    left: 50%; } }
+
+@media all and (max-width: 1024px) {
+  .icon_4 {
+    top: 550px;
+    left: 250px; } }
+
+.experience-4 {
+  position: absolute;
+  text-align: left; }
+  @media all and (min-width: 1024px) {
+    .experience-4 {
+      top: 530px;
+      left: 50%;
+      padding-left: 50px; } }
+  @media all and (max-width: 1024px) {
+    .experience-4 {
+      top: 530px;
+      left: 300px; } }
+
+@keyframes leftflash {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes rightflash {
+  0% {
+    transform: translateX(100%);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes min-rightflash {
+  0% {
+    transform: translateX(100%);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
+@media all and (min-width: 1024px) {
+  .flashClass_2 .experience-1 {
+    opacity: 0;
+    animation: leftflash 0.6s ease forwards;
+    -webkit-animation: leftflash 0.6s ease forwards;
+    -moz-animation: leftflash 0.6s ease forwards;
+    -ms-animation: leftflash 0.6s ease forwards; }
+  .flashClass_2 .experience-2 {
+    opacity: 0;
+    animation: rightflash 0.6s ease 0.6s forwards;
+    -webkit-animation: rightflash 0.6s ease 0.6s forwards;
+    -moz-animation: rightflash 0.6s ease 0.6s forwards;
+    -ms-animation: rightflash 0.6s ease 0.6s forwards; }
+  .flashClass_2 .experience-3 {
+    opacity: 0;
+    animation: leftflash 0.6s ease 1.2s forwards;
+    -webkit-animation: leftflash 0.6s ease 1.2s forwards;
+    -moz-animation: leftflash 0.6s ease 1.2s forwards;
+    -ms-animation: leftflash 0.6s ease 1.2s forwards; }
+  .flashClass_2 .experience-4 {
+    opacity: 0;
+    animation: rightflash 0.6s ease 1.8s forwards;
+    -webkit-animation: rightflash 0.6s ease 1.8s forwards;
+    -moz-animation: rightflash 0.6s ease 1.8s forwards;
+    -ms-animation: rightflash 0.6s ease 1.8s forwards; } }
+
+@media all and (max-width: 1024px) {
+  .flashClass_2 .experience-1 {
+    opacity: 0;
+    animation: min-rightflash 0.6s ease forwards;
+    -webkit-animation: min-rightflash 0.6s ease forwards;
+    -moz-animation: min-rightflash 0.6s ease forwards;
+    -ms-animation: min-rightflash 0.6s ease forwards; }
+  .flashClass_2 .experience-2 {
+    opacity: 0;
+    animation: min-rightflash 0.6s ease 0.6s forwards;
+    -webkit-animation: min-rightflash 0.6s ease 0.6s forwards;
+    -moz-animation: min-rightflash 0.6s ease 0.6s forwards;
+    -ms-animation: min-rightflash 0.6s ease 0.6s forwards; }
+  .flashClass_2 .experience-3 {
+    opacity: 0;
+    animation: min-rightflash 0.6s ease 1.2s forwards;
+    -webkit-animation: min-rightflash 0.6s ease 1.2s forwards;
+    -moz-animation: min-rightflash 0.6s ease 1.2s forwards;
+    -ms-animation: min-rightflash 0.6s ease 1.2s forwards; }
+  .flashClass_2 .experience-4 {
+    opacity: 0;
+    animation: min-rightflash 0.6s ease 1.8s forwards;
+    -webkit-animation: min-rightflash 0.6s ease 1.8s forwards;
+    -moz-animation: min-rightflash 0.6s ease 1.8s forwards;
+    -ms-animation: min-rightflash 0.6s ease 1.8s forwards; } }

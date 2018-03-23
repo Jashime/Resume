@@ -134,3 +134,98 @@
     }
 }
 
+@keyframes leftflash{
+    0%{ 
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rightflash{
+    0%{ 
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes min-rightflash{
+    0%{ 
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media all and (min-width:1024px) {
+    .flashClass_2 .experience-1{
+        opacity: 0;
+        animation: leftflash 0.6s ease forwards;
+        -webkit-animation: leftflash 0.6s ease forwards;
+        -moz-animation: leftflash 0.6s ease forwards;
+        -ms-animation: leftflash 0.6s ease forwards;
+    }
+    .flashClass_2 .experience-2{
+        opacity: 0;
+        animation: rightflash 0.6s ease 0.6s forwards;
+        -webkit-animation: rightflash 0.6s ease 0.6s forwards;
+        -moz-animation: rightflash 0.6s ease 0.6s forwards;
+        -ms-animation: rightflash 0.6s ease 0.6s forwards;
+    }
+    .flashClass_2 .experience-3{
+        opacity: 0;
+        animation: leftflash 0.6s ease 1.2s forwards;
+        -webkit-animation: leftflash 0.6s ease 1.2s forwards;
+        -moz-animation: leftflash 0.6s ease 1.2s forwards;
+        -ms-animation: leftflash 0.6s ease 1.2s forwards;
+    }
+    
+    .flashClass_2 .experience-4{
+        opacity: 0;
+        animation: rightflash 0.6s ease 1.8s forwards;
+        -webkit-animation: rightflash 0.6s ease 1.8s forwards;
+        -moz-animation: rightflash 0.6s ease 1.8s forwards;
+        -ms-animation: rightflash 0.6s ease 1.8s forwards;
+    }
+}
+
+@media all and (max-width:1024px){
+    .flashClass_2 .experience-1{
+        opacity: 0;
+        animation: min-rightflash 0.6s ease forwards;
+        -webkit-animation: min-rightflash 0.6s ease forwards;
+        -moz-animation: min-rightflash 0.6s ease forwards;
+        -ms-animation: min-rightflash 0.6s ease forwards;
+    }
+    .flashClass_2 .experience-2{
+        opacity: 0;
+        animation: min-rightflash 0.6s ease 0.6s forwards;
+        -webkit-animation: min-rightflash 0.6s ease 0.6s forwards;
+        -moz-animation: min-rightflash 0.6s ease 0.6s forwards;
+        -ms-animation: min-rightflash 0.6s ease 0.6s forwards;
+    }
+    .flashClass_2 .experience-3{
+        opacity: 0;
+        animation: min-rightflash 0.6s ease 1.2s forwards;
+        -webkit-animation: min-rightflash 0.6s ease 1.2s forwards;
+        -moz-animation: min-rightflash 0.6s ease 1.2s forwards;
+        -ms-animation: min-rightflash 0.6s ease 1.2s forwards;
+    }
+    .flashClass_2 .experience-4{
+        opacity: 0;
+        animation: min-rightflash 0.6s ease 1.8s forwards;
+        -webkit-animation: min-rightflash 0.6s ease 1.8s forwards;
+        -moz-animation: min-rightflash 0.6s ease 1.8s forwards;
+        -ms-animation: min-rightflash 0.6s ease 1.8s forwards;
+    }
+}

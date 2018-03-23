@@ -12,53 +12,57 @@ var Main = React.createClass({
     getInitialState:function(){
         return{
             display:[
-                {Pageid:0,PageDisplay:'block'},
-                {Pageid:1,PageDisplay:"none"},
-                {Pageid:2,PageDisplay:"none"},
-                {Pageid:3,PageDisplay:"none"}
+                {Pageid:0,PageDisplay:'block',flashClass:'common flashClass_0'},
+                {Pageid:1,PageDisplay:"none",flashClass:'common'},
+                {Pageid:2,PageDisplay:"none",flashClass:'common'},
+                {Pageid:3,PageDisplay:"none",flashClass:'common'}
             ], 
             startX:'',
-            endX:'',
-            
-                
-            
+            endX:'',                                       
         }
     },
 
     nextPage:function(evt){
         evt.stopPropagation();
-        console.log("点击下一页")
+        // console.log("点击下一页")
         for(var i=0;i<this.state.display.length;i++){
             if(this.state.display[i].PageDisplay == 'block'){
                 if(i == this.state.display.length-1){
                     this.state.display[i].PageDisplay = "none";
+                    this.state.display[i].flashClass = "common";
                     this.state.display[0].PageDisplay = "block";
+                    this.state.display[0].flashClass = "common flashClass_0";
                     this.setState(this.state);
                     return;
                 }else {
                     this.state.display[i].PageDisplay = "none";
+                    this.state.display[i].flashClass = "common";
                     this.state.display[i+1].PageDisplay = "block";
+                    this.state.display[i+1].flashClass = "common flashClass_"+this.state.display[i+1].Pageid;
                     this.setState(this.state);
                     return;
-                }
-                return;
+                }              
             }    
-        }
-               
+        }         
     },
 
-    previousPage:function(){
-        console.log("点击上一页")
+    previousPage:function(evt){
+        evt.stopPropagation();
+        // console.log("点击上一页")
         for(var i=0;i<this.state.display.length;i++){
             if(this.state.display[i].PageDisplay == 'block'){
                 if(i == 0){
                     this.state.display[i].PageDisplay = "none";
+                    this.state.display[i].flashClass = "common";
                     this.state.display[this.state.display.length-1].PageDisplay = "block";
+                    this.state.display[this.state.display.length-1].flashClass = "common flashClass_"+this.state.display[this.state.display.length-1].Pageid;
                     this.setState(this.state);
                     return;
                 }else {
                     this.state.display[i].PageDisplay = "none";
+                    this.state.display[i].flashClass = "common";
                     this.state.display[i-1].PageDisplay = "block";
+                    this.state.display[i-1].flashClass = "common flashClass_"+this.state.display[i-1].Pageid;
                     this.setState(this.state);
                     return;
                 }
@@ -68,38 +72,10 @@ var Main = React.createClass({
 
     handleWheel:function(evt){
         if(evt.deltaY>0){
-            for(var i=0;i<this.state.display.length;i++){
-                if(this.state.display[i].PageDisplay == 'block'){
-                    if(i == this.state.display.length-1){
-                        this.state.display[i].PageDisplay = "none";
-                        this.state.display[0].PageDisplay = "block";
-                        this.setState(this.state);
-                        return;
-                    }else {
-                        this.state.display[i].PageDisplay = "none";
-                        this.state.display[i+1].PageDisplay = "block";
-                        this.setState(this.state);
-                        return;
-                    }
-                }    
-            }
+            {this.nextPage(evt)};
         } 
         if(evt.deltaY<0){
-            for(var i=0;i<this.state.display.length;i++){
-                if(this.state.display[i].PageDisplay == 'block'){
-                    if(i == 0){
-                        this.state.display[i].PageDisplay = "none";
-                        this.state.display[this.state.display.length-1].PageDisplay = "block";
-                        this.setState(this.state);
-                        return;
-                    }else {
-                        this.state.display[i].PageDisplay = "none";
-                        this.state.display[i-1].PageDisplay = "block";
-                        this.setState(this.state);
-                        return;
-                    }
-                }    
-            } 
+            {this.previousPage(evt)}
         }      
     },
     
@@ -117,38 +93,10 @@ var Main = React.createClass({
 
     handleTouchEnd:function(evt){
         if(this.state.startX-this.state.endX>0){
-            for(var i=0;i<this.state.display.length;i++){
-                if(this.state.display[i].PageDisplay == 'block'){
-                    if(i == this.state.display.length-1){
-                        this.state.display[i].PageDisplay = "none";
-                        this.state.display[0].PageDisplay = "block";
-                        this.setState(this.state);
-                        return;
-                    }else {
-                        this.state.display[i].PageDisplay = "none";
-                        this.state.display[i+1].PageDisplay = "block";
-                        this.setState(this.state);
-                        return;
-                    }
-                }    
-            } 
+            {this.nextPage(evt)};
         }
         if(this.state.startX-this.state.endX<0){
-            for(var i=0;i<this.state.display.length;i++){
-                if(this.state.display[i].PageDisplay == 'block'){
-                    if(i == 0){
-                        this.state.display[i].PageDisplay = "none";
-                        this.state.display[this.state.display.length-1].PageDisplay = "block";
-                        this.setState(this.state);
-                        return;
-                    }else {
-                        this.state.display[i].PageDisplay = "none";
-                        this.state.display[i-1].PageDisplay = "block";
-                        this.setState(this.state);
-                        return;
-                    }
-                }    
-            } 
+            {this.previousPage(evt)}
         }
         this.setState({
             startX:'',
@@ -157,11 +105,6 @@ var Main = React.createClass({
     },
 
     render:function(){
-
-        // var firstDisplay = this.state.display[0].PageDisplay;
-        // var secondDisplay = this.state.display[1].PageDisplay;
-        // var thirdDisplay = this.state.display[2].PageDisplay;
-        // var fourthDisplay = this.state.display[3].PageDisplay;
         return(
             <div className="box" id="box" 
                 onWheel={this.handleWheel}
@@ -176,16 +119,20 @@ var Main = React.createClass({
                 <div className="content" >
                     
                     <WelcomePage
-                        firstDisplay={this.state.display[0].PageDisplay}    
+                        firstDisplay={this.state.display[0].PageDisplay}
+                        flashClass = {this.state.display[0].flashClass}    
                     />
                     <InfoPage
                         secondDisplay={this.state.display[1].PageDisplay}
+                        flashClass = {this.state.display[1].flashClass}
                     />
                     <ExperiencePage
-                        thirdDisplay={this.state.display[2].PageDisplay}  
+                        thirdDisplay={this.state.display[2].PageDisplay}
+                        flashClass = {this.state.display[2].flashClass}  
                     />
                     <SkillsPage
                         fourthDisplay={this.state.display[3].PageDisplay}
+                        flashClass = {this.state.display[3].flashClass}
                     />
                 </div>
             </div>
@@ -194,9 +141,3 @@ var Main = React.createClass({
 })
 
 ReactDOM.render(<Main/>,document.getElementById('bigbox'));
-
-// var navlist = document.getElementById("navlist");
-// var navlis = navlist.children;
-
-
-// console.log(navlis)
