@@ -3,6 +3,8 @@ var webpack = require('gulp-webpack');
 var gulpPlumber = require('gulp-plumber');
 var gulpWatch = require('gulp-watch');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var cssminify = require('gulp-minify-css');
 // var connect = require('gulp-connect');
 var browserSync = require('browser-sync').create();
 
@@ -25,6 +27,8 @@ gulp.task('style', function(){
     gulp.src('./style/**/*.scss')
       .pipe(gulpPlumber())
       .pipe(sass())
+      .pipe(concat('index.css'))
+      .pipe(cssminify())
       .pipe(gulp.dest('./www/dest/'))
       .pipe(browserSync.stream());
       // .pipe(connect.reload());
