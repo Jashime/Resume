@@ -22,7 +22,7 @@ var webpackConfig = {
 }
 
 gulp.task('style', function(){
-    gulp.src('./style/index.scss')
+    gulp.src('./style/**/*.scss')
       .pipe(gulpPlumber())
       .pipe(sass())
       .pipe(gulp.dest('./www/dest/'))
@@ -47,7 +47,7 @@ gulp.task('script', function(){
 // })
 
 gulp.task('html',function(){
-    gulp.src('./www/index.html')
+    gulp.src('./index.html')
     // .pipe(connect.reload());
     .pipe(browserSync.stream());
         
@@ -56,13 +56,13 @@ gulp.task('html',function(){
 gulp.task('watch',function(){
     gulp.watch('./script/**/*.jsx', ['script']);
     gulp.watch('./style/**/*.scss', ['style']);
-    gulp.watch('./www/index.html', ['html']);
+    gulp.watch('./index.html', ['html']);
 })
 
 gulp.task('browser', function(){
     browserSync.init({
       server:{
-        baseDir:'./www'
+        baseDir:'./'
       },
       open: true
     })

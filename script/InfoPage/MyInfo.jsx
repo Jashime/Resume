@@ -6,11 +6,11 @@ var MyInfo = React.createClass({
     getInitialState:function(){
 		return {
 			db:[
-                {id:1,icon:'./img/icons/person.png',InfoName:'姓名',Info:'何海锋'},
-                {id:2,icon:'./img/icons/birthday.png',InfoName:'出生年月',Info:'1990.12'},
-                {id:3,icon:'./img/icons/region.png',InfoName:'户籍',Info:'福建 宁德'},
-                {id:4,icon:'./img/icons/school.png',InfoName:'毕业院校',Info:'湖南文理学院'},
-                {id:5,icon:'./img/icons/education.png',InfoName:'学历',Info:'本科 学士'}
+                {id:1,icon:'../../www/img/icons/person.png',InfoName:'姓名',Info:'何海锋'},
+                {id:2,icon:'../../www/img/icons/birthday.png',InfoName:'出生年月',Info:'1990.12'},
+                {id:3,icon:'../../www/img/icons/region.png',InfoName:'户籍',Info:'福建 宁德'},
+                {id:4,icon:'../../www/img/icons/school.png',InfoName:'毕业院校',Info:'湖南文理学院'},
+                {id:5,icon:'../../www/img/icons/education.png',InfoName:'学历',Info:'本科 学士'}
             ]
 		}
 	},

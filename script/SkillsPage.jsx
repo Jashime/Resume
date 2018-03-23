@@ -6,15 +6,15 @@ var SkillsItem = React.createClass({
     getInitialState:function(){
         return{
             dataBase:[
-                {id:1,iconsrc:"./img/skills/html5.png",title:"HTML"},
-                {id:2,iconsrc:"./img/skills/css3.png",title:"CSS"},
-                {id:3,iconsrc:"./img/skills/javascript.png",title:"Javascript"},
-                {id:4,iconsrc:"./img/skills/jquery.png",title:"JQuery"},
-                {id:5,iconsrc:"./img/skills/Bootstrap.png",title:"Bootstrap"},
-                {id:6,iconsrc:"./img/skills/react.png",title:"React"},
-                {id:7,iconsrc:"./img/skills/nodejs.png",title:"Nodejs"},
-                {id:8,iconsrc:"./img/skills/git.png",title:"Git"},
-                {id:9,iconsrc:"./img/skills/gulp.png",title:"Gulp"}
+                {id:1,iconsrc:"../www/img/skills/html5.png",title:"HTML"},
+                {id:2,iconsrc:"../www/img/skills/css3.png",title:"CSS"},
+                {id:3,iconsrc:"../www/img/skills/javascript.png",title:"Javascript"},
+                {id:4,iconsrc:"../www/img/skills/jquery.png",title:"JQuery"},
+                {id:5,iconsrc:"../www/img/skills/Bootstrap.png",title:"Bootstrap"},
+                {id:6,iconsrc:"../www/img/skills/react.png",title:"React"},
+                {id:7,iconsrc:"../www/img/skills/nodejs.png",title:"Nodejs"},
+                {id:8,iconsrc:"../www/img/skills/git.png",title:"Git"},
+                {id:9,iconsrc:"../www/img/skills/gulp.png",title:"Gulp"}
             ]
         }
     },

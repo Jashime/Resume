@@ -12,7 +12,7 @@ var WelcomePage = React.createClass({
         return(
             
             <div className="common" id="welcome-page" style={{display:this.props.firstDisplay}}>
-                <img className="photo" src="./img/photo/Hehaifeng_2.jpg" alt="photo"/>
+                <img className="photo" src="../www/img/photo/Hehaifeng_2.jpg" alt="photo"/>
                 <h1>{Obj.myName}</h1>
                 <h2>{Obj.myGoal}</h2>
                 <h3>{Obj.myDet}</h3>
