@@ -16,8 +16,8 @@ var WelcomePage = React.createClass({
                 <h1>{Obj.myName}</h1>
                 <h2>{Obj.myGoal}</h2>
                 <h3>{Obj.myDet}</h3>
-                <p><a href="#" className="btn btn-primary btn-md" role="button">
-                learn more</a>
+                <p>
+                    <a href="#" onClick={this.props.learnMorn} className="btn btn-primary btn-md" role="button">了解更多</a>
                 </p>
             </div>
             

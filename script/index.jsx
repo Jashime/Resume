@@ -21,6 +21,9 @@ var Main = React.createClass({
             endX:'',                                       
         }
     },
+    navClick:function(evt){
+
+    },
 
     nextPage:function(evt){
         evt.stopPropagation();
@@ -104,14 +107,19 @@ var Main = React.createClass({
         })
     },
 
+    
+
+
     render:function(){
         return(
+            
             <div className="box" id="box" 
                 onWheel={this.handleWheel}
                 onTouchStart = {this.handleTouchStart}
                 onTouchMove = {this.handleTouchMove}
                 onTouchEnd = {this.handleTouchEnd}
             >
+                <NavPage findNav={this.jumpPage}/>
                 <ChangeBtn 
                     previousPage={this.previousPage}
                     nextPage={this.nextPage}   
@@ -119,6 +127,7 @@ var Main = React.createClass({
                 <div className="content" >
                     
                     <WelcomePage
+                        learnMorn={this.nextPage}
                         firstDisplay={this.state.display[0].PageDisplay}
                         flashClass = {this.state.display[0].flashClass}    
                     />
@@ -140,4 +149,80 @@ var Main = React.createClass({
     }
 })
 
+
+var NavBar = React.createClass({
+    getInitialState:function(){
+        return{
+            nav:[
+                {Pageid:0,navlist:'首页'},
+                {Pageid:1,navlist:'基本信息'},
+                {Pageid:2,navlist:'工作经历'},
+                {Pageid:3,navlist:'专业技能'},
+                {Pageid:4,navlist:'项目经验'},
+                {Pageid:5,navlist:'自我评价'},
+                {Pageid:6,navlist:'联系方式'},
+            ]
+        }
+    },
+    
+    onClick:function(id){
+        // this.props.findNav(id)
+        console.log(id)
+    },
+
+
+    render:function(){
+        var navbar = null;
+        for(var i=0;i<this.state.nav.length;i++){
+            navbar = this.state.nav.map(function(item){
+                return(
+                    <li key={item.Pageid} 
+                        onClick={this.onClick.bind(this,item.Pageid)}
+                    >
+                        <a href="#">{item.navlist}</a>
+                    </li>
+                )
+            }.bind(this))
+        }
+        return(
+            <ul className="nav navbar-nav" id="myTab">
+                {navbar}
+            </ul>
+        )
+    }
+})
+
+var NavPage = React.createClass({
+    render:function(){  
+        return(
+            <nav className="navbar navbar-default navbar-fixed-top" id="nav-top">
+                <div className="container" >
+                    <div className="navbar-header">
+                        <a href="#"><img id="myphoto" src="./www/img/photo/Hehaifeng_1.jpg" alt="我的照片"/></a>
+                        <span className="myName">何海锋</span>
+                        <button className="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div className="collapse navbar-collapse navbar-right">
+                        <NavBar />
+                        {/* <ul className="nav navbar-nav" id="myTab">
+                            <li><a href="#">首页</a></li>
+                            <li><a href="#">基本信息</a></li>
+                            <li><a href="#">工作经历</a></li>
+                            <li><a href="#">专业技能</a></li>
+                            <li><a href="#">项目经验</a></li>
+                            <li><a href="#">自我评价</a></li>
+                            <li><a href="#">联系方式</a></li>
+                        </ul> */}
+                    </div>
+                </div>
+            </nav>  
+        )
+    }
+})
+
+ReactDOM.render(<NavPage/>,document.getElementById('navbox'));
 ReactDOM.render(<Main/>,document.getElementById('bigbox'));

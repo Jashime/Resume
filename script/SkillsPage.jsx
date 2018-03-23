@@ -42,8 +42,7 @@ var SkillsItem = React.createClass({
 var SkillsPage = React.createClass({
     render:function(){
         return(
-            <div id="skills-page" className={this.props.flashClass} style={{display:this.props.fourthDisplay}}>
-                
+            <div id="skills-page" className={this.props.flashClass} style={{display:this.props.fourthDisplay}}>               
                <div className="skills-content">
                     <SkillsItem/>    
                 </div>
