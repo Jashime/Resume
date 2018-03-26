@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM =require('react-dom');
+var Pubsub = require('pubsub-js');
 
 var WelcomePage = require('./WelcomePage.jsx');
 var InfoPage = require('./InfoPage/InfoPage.jsx');
@@ -18,11 +19,8 @@ var Main = React.createClass({
                 {Pageid:3,PageDisplay:"none",flashClass:'common'}
             ], 
             startX:'',
-            endX:'',                                       
+            endX:'',                                     
         }
-    },
-    navClick:function(evt){
-
     },
 
     nextPage:function(evt){
@@ -106,20 +104,43 @@ var Main = React.createClass({
             endX:'',
         })
     },
+    //无嵌套关系组件之间的传值
+    componentDidMount: function () {  
+        //通过PubSub库订阅一个信息  
+        this.pubsub_token = PubSub.subscribe("getPageid", function (topic, Pageid) {  
+            for(var i=0;i<this.state.display.length;i++){
+                if(this.state.display[i].PageDisplay == 'block'){
+                    if(Pageid == this.state.display[i].Pageid){  
+                        // console.log("测试"+i);                  
+                        return;
+                    }
+                    else{
+                        this.state.display[Pageid].PageDisplay = "block";
+                        this.state.display[Pageid].flashClass = "common flashClass_"+Pageid;
+                        this.state.display[i].PageDisplay = "none";
+                        this.state.display[i].flashClass = "common";
+                        // console.log("测试"+i);
+                        this.setState(this.state);
+                        return;
+                    }
+                }
+            }
 
-    
-
+        }.bind(this));  
+      },  
+      componentWillUnmount: function () {  
+        //当组件将要卸载的时候，退订信息  
+        PubSub.unsubscribe(this.pubsub_token);  
+      },  
 
     render:function(){
         return(
-            
             <div className="box" id="box" 
                 onWheel={this.handleWheel}
                 onTouchStart = {this.handleTouchStart}
                 onTouchMove = {this.handleTouchMove}
                 onTouchEnd = {this.handleTouchEnd}
-            >
-                <NavPage findNav={this.jumpPage}/>
+            >   
                 <ChangeBtn 
                     previousPage={this.previousPage}
                     nextPage={this.nextPage}   
@@ -150,6 +171,34 @@ var Main = React.createClass({
 })
 
 
+var NavPage = React.createClass({
+    
+    onfindPageid:function(Pageid){
+        // console.log(Pageid)
+        PubSub.publish("getPageid", Pageid);  
+    },
+
+    render:function(){  
+        return(
+            <div className="container"  >
+                <div className="navbar-header">
+                    <a href="#"><img id="myphoto" src="./www/img/photo/Hehaifeng_1.jpg" alt="我的照片"/></a>
+                    <span className="myName">何海锋</span>
+                    <button className="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                    </button>
+                </div>
+                <div className="collapse navbar-collapse navbar-right">
+                    <NavBar onfindPageid={this.onfindPageid}/>
+                </div>
+                
+            </div>       
+        )
+    }
+})
+
 var NavBar = React.createClass({
     getInitialState:function(){
         return{
@@ -164,20 +213,14 @@ var NavBar = React.createClass({
             ]
         }
     },
-    
-    onClick:function(id){
-        // this.props.findNav(id)
-        console.log(id)
-    },
-
-
     render:function(){
         var navbar = null;
         for(var i=0;i<this.state.nav.length;i++){
             navbar = this.state.nav.map(function(item){
                 return(
                     <li key={item.Pageid} 
-                        onClick={this.onClick.bind(this,item.Pageid)}
+                        // onClick={this.onClick.bind(this,item.Pageid)}
+                        onClick={this.props.onfindPageid.bind(null,item.Pageid)}//this改成null
                     >
                         <a href="#">{item.navlist}</a>
                     </li>
@@ -192,37 +235,7 @@ var NavBar = React.createClass({
     }
 })
 
-var NavPage = React.createClass({
-    render:function(){  
-        return(
-            <nav className="navbar navbar-default navbar-fixed-top" id="nav-top">
-                <div className="container" >
-                    <div className="navbar-header">
-                        <a href="#"><img id="myphoto" src="./www/img/photo/Hehaifeng_1.jpg" alt="我的照片"/></a>
-                        <span className="myName">何海锋</span>
-                        <button className="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div className="collapse navbar-collapse navbar-right">
-                        <NavBar />
-                        {/* <ul className="nav navbar-nav" id="myTab">
-                            <li><a href="#">首页</a></li>
-                            <li><a href="#">基本信息</a></li>
-                            <li><a href="#">工作经历</a></li>
-                            <li><a href="#">专业技能</a></li>
-                            <li><a href="#">项目经验</a></li>
-                            <li><a href="#">自我评价</a></li>
-                            <li><a href="#">联系方式</a></li>
-                        </ul> */}
-                    </div>
-                </div>
-            </nav>  
-        )
-    }
-})
 
-ReactDOM.render(<NavPage/>,document.getElementById('navbox'));
+
+ReactDOM.render(<NavPage/>,document.getElementById('nav-top'));
 ReactDOM.render(<Main/>,document.getElementById('bigbox'));
