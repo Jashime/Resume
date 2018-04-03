@@ -7,6 +7,9 @@ var InfoPage = require('./InfoPage/InfoPage.jsx');
 var ExperiencePage = require('./ExperiencePage/ExperiencePage.jsx');
 var SkillsPage = require('./SkillsPage.jsx');
 var ChangeBtn = require('./ChangeBtn.jsx');
+var ProjectPage = require('./ProjectPage.jsx');
+var CommentPage = require('./CommentPage.jsx');
+// var ContactPage = require('./ContactPage.jsx');
 
 var Main = React.createClass({
 
@@ -16,7 +19,10 @@ var Main = React.createClass({
                 {Pageid:0,PageDisplay:'block',flashClass:'common flashClass_0'},
                 {Pageid:1,PageDisplay:"none",flashClass:'common'},
                 {Pageid:2,PageDisplay:"none",flashClass:'common'},
-                {Pageid:3,PageDisplay:"none",flashClass:'common'}
+                {Pageid:3,PageDisplay:"none",flashClass:'common'},
+                {Pageid:4,PageDisplay:"none",flashClass:'common'},
+                {Pageid:5,PageDisplay:"none",flashClass:'common'},
+                // {Pageid:6,PageDisplay:"none",flashClass:'common'},
             ], 
             startX:'',
             endX:'',                                     
@@ -164,6 +170,18 @@ var Main = React.createClass({
                         fourthDisplay={this.state.display[3].PageDisplay}
                         flashClass = {this.state.display[3].flashClass}
                     />
+                    <ProjectPage
+                        fifthDisplay={this.state.display[4].PageDisplay}
+                        flashClass = {this.state.display[4].flashClass}
+                    />
+                    <CommentPage
+                        sixthDisplay={this.state.display[5].PageDisplay}
+                        flashClass = {this.state.display[5].flashClass}
+                    />
+                    {/* <ContactPage
+                        seventhDisplay={this.state.display[6].PageDisplay}
+                        flashClass = {this.state.display[6].flashClass}
+                    /> */}
                 </div>
             </div>
         )
@@ -209,7 +227,7 @@ var NavBar = React.createClass({
                 {Pageid:3,navlist:'专业技能'},
                 {Pageid:4,navlist:'项目经验'},
                 {Pageid:5,navlist:'自我评价'},
-                {Pageid:6,navlist:'联系方式'},
+                // {Pageid:6,navlist:'联系方式'},
             ]
         }
     },

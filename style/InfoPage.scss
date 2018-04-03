@@ -38,6 +38,20 @@
     -moz-animation: secondanimation 1.5s ease 1s forwards;
     -ms-animation: secondanimation 1.5s ease 1s forwards;
 }
+.flashClass_1 .Info-content tbody tr:nth-child(6){
+    opacity: 0;
+    animation: secondanimation 1.5s ease 1.2s forwards;
+    -webkit-animation: secondanimation 1.5s ease 1.2s forwards;
+    -moz-animation: secondanimation 1.5s ease 1.2s forwards;
+    -ms-animation: secondanimation 1.5s ease 1.2s forwards;
+}
+.flashClass_1 .Info-content tbody tr:nth-child(7){
+    opacity: 0;
+    animation: secondanimation 1.5s ease 1.4s forwards;
+    -webkit-animation: secondanimation 1.5s ease 1.4s forwards;
+    -moz-animation: secondanimation 1.5s ease 1.4s forwards;
+    -ms-animation: secondanimation 1.5s ease 1.4s forwards;
+}
 .Info-content{
     width: 600px;
     line-height: 30px;

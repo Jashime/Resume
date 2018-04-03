@@ -10,7 +10,9 @@ var MyInfo = React.createClass({
                 {id:2,icon:'./www/img/icons/birthday.png',InfoName:'出生年月',Info:'1990.12'},
                 {id:3,icon:'./www/img/icons/region.png',InfoName:'户籍',Info:'福建 宁德'},
                 {id:4,icon:'./www/img/icons/school.png',InfoName:'毕业院校',Info:'湖南文理学院'},
-                {id:5,icon:'./www/img/icons/education.png',InfoName:'学历',Info:'本科 学士'}
+                {id:5,icon:'./www/img/icons/education.png',InfoName:'学历',Info:'本科 学士'},
+                {id:6,icon:'./www/img/icons/phone.png',InfoName:'电话/微信',Info:'18559026885'},
+                {id:7,icon:'./www/img/icons/email.png',InfoName:'邮箱',Info:'hhf0804@163.com'}
             ]
 		}
 	},

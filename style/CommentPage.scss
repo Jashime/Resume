@@ -1,0 +1,14 @@
+#comment-page .comment-content{
+    margin: 120px 140px;
+    text-align: left;
+}
+#comment-page .comment-content p{
+    font-size: 20px;
+}
+.flashClass_5 .comment-content{
+    animation: comment_flash 1s ease;
+}
+@keyframes comment_flash{
+    0%{transform: scale(0) rotateX(360deg)}
+    100%{transform: scale(1)  rotateX(0deg)}
+}
