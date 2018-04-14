@@ -226,7 +226,7 @@ var NavBar = React.createClass({
                 {Pageid:2,navlist:'工作经历'},
                 {Pageid:3,navlist:'专业技能'},
                 {Pageid:4,navlist:'项目经验'},
-                {Pageid:5,navlist:'自我评价'},
+                {Pageid:5,navlist:'前端之路'},
                 // {Pageid:6,navlist:'联系方式'},
             ]
         }

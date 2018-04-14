@@ -1,0 +1,89 @@
+.project-list{
+    width: 700px;
+    height: 600px;
+    margin: 50px auto;
+}
+.project-list tbody tr td{
+    width: 350px;
+    height: 200px;
+    text-align:left;
+    
+}
+.project-list tbody tr .project-des{
+    padding-left: 50px;
+}
+.project-list tbody tr td img{
+    width: 100%;
+}
+.project-list tbody tr td p{
+    font-size: 18px;
+}
+
+.flashClass_4 .project-list .project-img_1{
+    opacity: 0;
+    animation: project-flash-left 1s ease-in forwards;
+    -moz-animation: project-flash-left 1s ease-in forwards;
+    -webkit-animation: project-flash-left 1s ease-in forwards;
+    -ms-animation: project-flash-left 1s ease-in forwards;
+}
+
+.flashClass_4 .project-list .project-des_1{
+    opacity: 0;
+    animation: project-flash-right 1s ease-in forwards;
+    -moz-animation: project-flash-right 1s ease-in forwards;
+    -webkit-animation: project-flash-right 1s ease-in forwards;
+    -ms-animation: project-flash-right 1s ease-in forwards;
+}
+
+.flashClass_4 .project-list .project-img_2{
+    opacity: 0;
+    animation: project-flash-left 1s ease-in 1s forwards;
+    -moz-animation: project-flash-left 1s ease-in 1s forwards;
+    -webkit-animation: project-flash-left 1s ease-in 1s forwards;
+    -ms-animation: project-flash-left 1s ease-in 1s forwards;
+}
+
+.flashClass_4 .project-list .project-des_2{
+    opacity: 0;
+    animation: project-flash-right 1s ease-in 1s forwards;
+    -moz-animation: project-flash-right 1s ease-in 1s forwards;
+    -webkit-animation: project-flash-right 1s ease-in 1s forwards;
+    -ms-animation: project-flash-right 1s ease-in 1s forwards;
+}
+
+.flashClass_4 .project-list .project-img_3{
+    opacity: 0;
+    animation: project-flash-left 1s ease-in 2s forwards;
+    -moz-animation: project-flash-left 1s ease-in 2s forwards;
+    -webkit-animation: project-flash-left 1s ease-in 2s forwards;
+    -ms-animation: project-flash-left 1s ease-in 2s forwards;
+}
+
+.flashClass_4 .project-list .project-des_3{
+    opacity: 0;
+    animation: project-flash-right 1s ease-in 2s forwards;
+    -moz-animation: project-flash-right 1s ease-in 2s forwards;
+    -webkit-animation: project-flash-right 1s ease-in 2s forwards;
+    -ms-animation: project-flash-right 1s ease-in 2s forwards;
+}
+
+@keyframes project-flash-left{
+    0%{
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes project-flash-right{
+    0%{
+        transform: translateX(500px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

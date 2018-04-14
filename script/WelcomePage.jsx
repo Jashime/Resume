@@ -4,7 +4,7 @@ var ReactDOM =require('react-dom');
 var Obj = {
     myName:'何海锋',
     myGoal:'在前端的路上摸爬滚打中前进',
-    myDet:'开弓没有回头箭，选择的路就要好好的走下去',
+    myDet:'希望找一份web前端开发的工作',
 };
 var WelcomePage = React.createClass({
     
@@ -17,7 +17,7 @@ var WelcomePage = React.createClass({
                 <h2>{Obj.myGoal}</h2>
                 <h3>{Obj.myDet}</h3>
                 <p>
-                    <a href="#" onClick={this.props.learnMorn} className="btn btn-primary btn-md" role="button">了解更多</a>
+                    <a href="https://github.com/Jashime" target="_blank" className="btn btn-primary btn-md" role="button">GitHub</a>
                 </p>
             </div>
             
